@@ -1,43 +1,20 @@
 .question_container {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
-}
-
-.question_block {
-    height: 100%;
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 30px;  
 }
 
-.questions {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 20px; 
-}
-
-.questions p {
-    text-align: start;
-    font-size: 16px;
+.question p {
+    font-weight: 700;
 }
 
 .question_title {
     font-weight: 500;
-    font-size: 12px;
 }
 
 .num_question {
-    width: 30px;
-    height: 30px;
     border-radius: 15px; 
-    background-color: #0077F5;  
+    background-color: #3875f6;  
     color: aliceblue;
     display: flex;
     justify-content: center;
@@ -46,32 +23,184 @@
 }   
 
 .answers_block {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
 .btns_answers {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 } 
 
 .btns_answers button {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
     border: 1px solid transparent;
     cursor: pointer;
     background: transparent;
-    z-index: 1;
 }
 
-.btns_answers img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    z-index: -1;
+@media (max-width: 320px) {
+
+    .btns_answers button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btns_answers img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .question_title {
+        font-size: 16px;
+    }
+
+    .num_question {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 16px;
+    }
+
+    .question p {
+        font-size: 16px;
+    }
+
+    .btn_back {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+
+    .btns_answers button {
+        width: 43px;
+        height: 43px;
+    }
+
+    .btns_answers img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .question_title {
+        font-size: 18px;
+    }
+
+    .num_question {
+        width: 43px;
+        height: 43px;
+        border-radius: 30px;
+        font-size: 18px;
+    }
+
+    .question p {
+        font-size: 18px;
+    }
+
+    .btn_back {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 390px) {
+
+    .btns_answers button {
+        width: 46px;
+        height: 46px;
+    }
+
+    .btns_answers img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .question_title {
+        font-size: 20px;
+    }
+
+    .num_question {
+        width: 43px;
+        height: 43px;
+        border-radius: 30px;
+        font-size: 20px;
+    }
+
+    .question p {
+        font-size: 20px;
+    }
+
+    .btn_back {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 391px) and (max-width: 428px) {
+
+    .btns_answers button {
+        width: 51px;
+        height: 51px;
+    }
+
+    .btns_answers img {
+        width: 51px;
+        height: 51px;
+    }
+
+    .question_title {
+        font-size: 22px;
+    }
+
+    .num_question {
+        width: 43px;
+        height: 43px;
+        border-radius: 30px;
+        font-size: 22px;
+    }
+
+    .question p {
+        font-size: 22px;
+    }
+
+    .btn_back {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 429px) and (max-width: 480px) {
+
+    .btns_answers button {
+        width: 58px;
+        height: 58px;
+    }
+
+    .btns_answers img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .question_title {
+        font-size: 24px;
+    }
+
+    .num_question {
+        width: 43px;
+        height: 43px;
+        border-radius: 30px;
+        font-size: 24px;
+    }
+
+    .question p {
+        font-size: 24px;
+    }
+
+    .btn_back {
+        font-size: 24px;
+    }
 }
 
 .btns_back_help {
@@ -85,9 +214,8 @@
     border-radius: 50px;
     border: 1px solid transparent;
     color: white;
-    font-size: 18px;
     font-weight: 500; 
-    background-color: #0077F5;
+    background-color: #3875f6;
 
     display: flex;
     align-items: center;

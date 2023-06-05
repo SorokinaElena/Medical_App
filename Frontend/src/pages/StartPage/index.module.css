@@ -1,22 +1,191 @@
 .start_page {
     width: 100%;
-    height: 80vh;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+
+    /* background-image: url('../../media/slice_3.png');
+    background-repeat: no-repeat;
+    opacity: 1; */
 }
 
-p {
+h2 {
+    visibility: hidden;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 1px 1px 1px pink;
+    animation-name: wellcome;
+    animation-delay: 0.5s;
+    animation-duration: 10s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.explanation_text > p {
+    visibility: hidden;
     text-align: start;
-    font-size: 13px;
-    font-weight: 700;  
+    font-weight: 600;  
     margin: 25px 0;      
+    color: black;
+}
+
+@media (max-width: 320px) {
+
+    /* h2 {
+        font-size: 28px;
+    } */
+
+    .explanation_text > p {
+        font-size: 14px;     
+    }
+
+    .explanation_text > p:last-child {
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+
+    /* h2 {
+        font-size: 32px;
+    } */
+
+    .explanation_text > p {
+        font-size: 16px;     
+    }
+
+    .explanation_text > p:last-child {
+        padding-bottom: 178px;        
+    }
+}
+
+@media (min-width: 361px) and (max-width: 390px) {
+
+    /* h2 {
+        font-size: 34px;
+    } */
+
+    .explanation_text > p {
+        font-size: 17px;     
+    }
+
+    .explanation_text > p:last-child {
+        padding-bottom: 220px;        
+    }
+}
+
+@media (min-width: 391px) and (max-width: 428px) {
+
+    /* h2 {
+        font-size: 38px;
+    } */
+
+    .explanation_text > p {
+        font-size: 19px;     
+    }
+
+    .explanation_text > p:last-child {
+        padding-bottom: 220px;        
+    }
+
+}    
+
+@media (min-width: 429px) and (max-width: 480px) {
+
+    /* h2 {
+        font-size: 42px;
+    } */
+
+    .explanation_text > p {
+        font-size: 21px;     
+    }
+
+    .explanation_text > p:last-child {
+        padding-bottom: 220px;        
+    }
+
 }
 
 a {
     text-decoration: none;
- }
+}
 
+.explanation_text > p:nth-child(1) {
+    animation-name: p_1;
+    animation-delay: 2.5s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
 
+.explanation_text > p:nth-child(2) {
+    animation-name: p_2;
+    animation-delay: 4s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+.explanation_text > p:nth-child(3) {
+    animation-name: p_3;
+    animation-delay: 6s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+/* for animation start: */
+@keyframes wellcome {
+    from { 
+        visibility: hidden;
+      }
+    to { 
+        visibility: visible; 
+    }
+  0% {color: rgba(206, 6, 228, 0.25);}
+  5% {color: rgba(206, 6, 228, 0.50);}
+  10% {color: rgba(206, 6, 228, 0.75);}
+  15% {color: rgba(206, 6, 228, 1);}
+  20% {color: #a215fd;}
+  50% {color: #773dfb;}
+  75% {color: #6e45fa;}
+  100% {color: #3875f6;}
+}
+
+@keyframes p_1 {
+    from { 
+        visibility: hidden;
+      }
+    to { 
+        visibility: visible; 
+    }
+
+    0%   {color: transparent;}
+    100%  {color: black;}
+}
+
+@keyframes p_2 {
+    from { 
+        visibility: hidden;
+      }
+    to { 
+        visibility: visible; 
+    }
+
+    0%   {color: transparent;}
+    100%  {color: black;}
+}
+
+@keyframes p_3 {
+    from { 
+        visibility: hidden;
+      }
+    to { 
+        visibility: visible; 
+    }
+
+    0%   {color: transparent;}
+    100%  {color: black;}
+}

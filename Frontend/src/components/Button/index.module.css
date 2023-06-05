@@ -3,7 +3,65 @@
     border-radius: 50px;
     border: 1px solid transparent;
     color: white;
-    font-size: 16px;
     font-weight: 500; 
-    background-color: #0077F5;
+    background-color: #3875f6;
+}
+
+.btn_start_page {
+    visibility: hidden;
+    animation-name: start_page_btn;
+    animation-delay: 8.5s;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@media (max-width: 320px) {
+
+    .btn, 
+    .btn_start_page {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+
+    .btn,
+    .btn_start_page {
+        font-size: 18px;
+    }   
+}
+
+@media (min-width: 361px) and (max-width: 390px) {
+    .btn,
+    .btn_start_page {
+        font-size: 20px;
+    }   
+}
+
+@media (min-width: 391px) and (max-width: 428px) {
+
+    .btn,
+    .btn_start_page {
+        font-size: 22px;
+    }   
+}    
+
+@media (min-width: 429px) and (max-width: 480px) {
+
+    .btn,
+    .btn_start_page {
+        font-size: 24px;
+    }   
+}
+
+@keyframes start_page_btn {
+    from { 
+        visibility: hidden;
+      }
+    to { 
+        visibility: visible; 
+    }
+    0% {background-color: rgba(56, 117, 246, 0);}
+    100% {background-color: rgba(56, 117, 246, 1);}
 }

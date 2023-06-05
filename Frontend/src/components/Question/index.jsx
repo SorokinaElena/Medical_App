@@ -4,12 +4,20 @@ import { questions } from './data/questions.js';
 import s from './index.module.css';
 import Button from '../Button/index.jsx';
 import { Context } from '../../context';
-import red from '../../media/red.jfif';
-import orange from '../../media/orange.jfif';
-import lightyellow from '../../media/lightyellow.jfif';
-import yellow from '../../media/yellow.jfif';
-import green from '../../media/green.jfif';
-import lightgreen from '../../media/lightgreen.jfif';
+
+// import green_smile from '../../media/green_smile_s.png';
+// import lightgreen_smile from '../../media/lightgreen_smile_s.png';
+// import yellow_smile from '../../media/yellow_smile_s.png';
+// import orange_smile from '../../media/orange_smile_s.png';
+// import lightred_smile from '../../media/lightred_smile_s.png';
+// import red_smile from '../../media/red_smile_s.png';
+
+import green_smile from '../../media/green_smile.png';
+import lightgreen_smile from '../../media/lightgreen_smile.png';
+import yellow_smile from '../../media/yellow_smile.png';
+import orange_smile from '../../media/orange_smile.png';
+import lightred_smile from '../../media/lightred_smile.png';
+import red_smile from '../../media/red_smile.png';
 
 
 export default function Question() {
@@ -57,37 +65,37 @@ export default function Question() {
   
   return (
     <div className={s.question_container}>
-
-      <div className={s.question_block}>
-       <div className={s.questions}>
+       <div className={s.questions_explanation}>
         {
           questions[questionNum].section_title 
           ? <p className={s.question_title}>{questions[questionNum].section_title}</p> 
           : <></>
         }
+        </div>
 
-        <div className={s.num_question}>{questions[questionNum].id}</div>
-        <img src={`https://counter1px.herokuapp.com/?q=${questionNum}`} alt="" className={s.analitica}  />
-        <p>{questions[questionNum].question}</p>
-        </div>
-      <div className={s.answers_block}>
-        <div className={s.btns_answers}>
-          <button value={questions[questionNum].answer_green} onClick={questionNumIncr}><img src={lightgreen} alt="lightgreen" /></button>
-          <button value={questions[questionNum].answer_light_green} onClick={questionNumIncr}><img src={green} alt="green" /></button>
-          <button value={questions[questionNum].answer_light_yellow} onClick={questionNumIncr}><img src={lightyellow} alt="lightyelow" /></button>
-          <button value={questions[questionNum].answer_yellow} onClick={questionNumIncr}><img src={yellow} alt="yellow" /></button>
-          <button value={questions[questionNum].answer_orange} onClick={questionNumIncr}><img src={orange} alt="orange" /></button>
-          <button value={questions[questionNum].answer_red} onClick={questionNumIncr}><img src={red} alt="red" /></button>
-        </div>
-        <div className={s.btns_back_help}>
-        {
-          questionNum === 0 
-          ? <Link to='/select_problem'> <Button>return to problem choose</Button> </Link>
-          :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
-        }
-        </div>
-      </div>        
-     </div> 
+        <div className={s.question}>
+          <div className={s.num_question}>{questions[questionNum].id}</div>
+          <img src={`https://counter1px.herokuapp.com/?q=${questionNum}`} alt="" className={s.analitica}  />
+          <p>{questions[questionNum].question}</p>
+          
+        <div className={s.answers_block}>
+          <div className={s.btns_answers}>
+            <button value={questions[questionNum].answer_green} onClick={questionNumIncr}><img src={green_smile} alt="green_smile" /></button>
+            <button value={questions[questionNum].answer_light_green} onClick={questionNumIncr}><img src={lightgreen_smile} alt="lightgreen_smile" /></button>
+            <button value={questions[questionNum].answer_light_yellow} onClick={questionNumIncr}><img src={yellow_smile} alt="yelow_smile" /></button>
+            <button value={questions[questionNum].answer_yellow} onClick={questionNumIncr}><img src={orange_smile} alt="orange_smile" /></button>
+            <button value={questions[questionNum].answer_orange} onClick={questionNumIncr}><img src={lightred_smile} alt="lightred_smile" /></button>
+            <button value={questions[questionNum].answer_red} onClick={questionNumIncr}><img src={red_smile} alt="red_smile" /></button>
+          </div>
+          <div className={s.btns_back_help}>
+          {
+            questionNum === 0 
+            ? <Link to='/select_problem'> <Button>return to problem choose</Button> </Link>
+            :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
+          }
+          </div>
+        </div>   
+      </div>     
     </div>
   )
 }

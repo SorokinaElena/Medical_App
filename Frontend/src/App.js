@@ -13,6 +13,8 @@ import { postUserData } from './requests/postUserData';
 
 function App() {
 
+  let page_name = '';
+
   const navigate = useNavigate();
 
   const [ bodyArea, setBodyArea ] = useState([]);
@@ -51,7 +53,7 @@ function App() {
 
   return (
     <div>
-      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions}}>
+      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions, page_name}}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<StartPage />} />
