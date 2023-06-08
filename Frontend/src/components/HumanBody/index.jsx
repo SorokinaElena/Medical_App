@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import s from './index.module.css';
 import human from './media/Siluet_human.png';
-import { useState } from 'react';
 import { Context } from '../../context';
-import { Link } from 'react-router-dom';
+
 
 export default function HumanBody() {
 
@@ -28,7 +27,7 @@ export default function HumanBody() {
   // className={getDotClasses('head', s.head).join(' ') - 'head' - title from area
   
   return (
-    <div>
+    <div className={s.block_human_wrapper}>
       <div className={s.block_human}>
         <div className={getDotClasses('head', s.head).join(' ')}> </div> 
         <div className={getDotClasses('right_hand', s.right_hand).join(' ')}> </div>
@@ -59,5 +58,7 @@ export default function HumanBody() {
     </div>
   )
 }
+
+// https://www.image-map.net/
 
 

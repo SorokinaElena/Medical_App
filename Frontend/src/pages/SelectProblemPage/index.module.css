@@ -1,3 +1,7 @@
+.select_problem_page {
+    min-height: 650px;
+}
+
 .human_block{
     display: flex;
     flex-direction: column;
@@ -8,8 +12,67 @@
 }
 
 .human_block > p {
+    visibility: hidden;
     text-align: start;
     font-weight: 600;  
-    margin: 25px 0;      
+    /* margin: 25px 0;       */
     color: black;
+
+    animation-name: p_1;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes p_1 {
+    from { 
+        visibility: hidden;
+      }
+    to { 
+        visibility: visible; 
+    }
+
+    0%   {color: transparent;}
+    100%  {color: black;}
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+
+    .human_block > p { 
+        margin: 25px 0;  
+    }    
+    
+}
+
+@media (min-width: 360px) and (max-width: 389px) {
+
+    .human_block > p { 
+        margin: 0 0 90px 0;  
+    }   
+
+}
+
+@media (min-width: 390px) and (max-width: 427px) {
+
+    .human_block > p { 
+        margin: 0 0 104px 0;  
+    }   
+ 
+}
+
+@media (min-width: 428px) and (max-width: 479px) {
+
+    .human_block > p { 
+        margin: 0 0 142px 0;  
+    }   
+
+}    
+
+@media (min-width: 480px) and (max-width: 480px) {
+
+    .human_block > p { 
+        margin: 0 0 85px 0;  
+    }   
+
 }
