@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Question from '../../components/Question';
 import { Context } from '../../context';
+import s from './index.module.css';
 
 export default function QuestionPage() {
 
@@ -9,7 +10,7 @@ page_name = 'question_page';
 console.log(page_name);
 
   return (
-    <div>
+    <div className={s.question_page}>
       <Question />
     </div>
   )

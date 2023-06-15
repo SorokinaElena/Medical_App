@@ -71,11 +71,12 @@ export default function Question() {
           ? <p className={s.question_title}>{questions[questionNum].section_title}</p> 
           : <></>
         }
+        <img src={`https://counter1px.herokuapp.com/?q=${questionNum}`} alt="" className={s.analitica}  />
         </div>
 
         <div className={s.question}>
           <div className={s.num_question}>{questions[questionNum].id}</div>
-          <img src={`https://counter1px.herokuapp.com/?q=${questionNum}`} alt="" className={s.analitica}  />
+          
           <p>{questions[questionNum].question}</p>
           
         <div className={s.answers_block}>

@@ -1,10 +1,10 @@
-.block_human_wrapper {
+/* .block_human_wrapper {
     width: 100%;
-}
+} */
 
 .block_human {
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     /* width: 277px;
     height: 334px;  */
 }
@@ -22,7 +22,8 @@
     background-color: #be4ed4;
 }
 
-@media (min-width: 320px) and (max-width: 359px){
+/* (min-width: 320px) and  */
+@media (max-width: 359px) {
 
     .block_human > img {
         width: 280px;
@@ -343,38 +344,4 @@
         margin-left: 302px;
         margin-top: 175px;
     }
-
 }
-
-
-
-
-
-/* @media (min-width: 320px) and (max-width: 359px){
-
- 
-} 
-
-@media (min-width: 360px) and (max-width: 389px) {
-
-  
-
-}    
-
-@media (min-width: 390px) and (max-width: 427px) {
-
-    
-
-}    
-
-@media (min-width: 428px) and (max-width: 479px) {
-
-  
-
-}    
-
-@media (min-width: 480px) and (max-width: 480px) {
-
-    
-
-} */

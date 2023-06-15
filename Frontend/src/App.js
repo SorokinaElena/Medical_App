@@ -52,7 +52,7 @@ function App() {
   } 
 
   return (
-    <div>
+    <div className='App'>
       <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions, page_name}}>
         <Routes>
           <Route path='/' element={<Layout />}>

@@ -27,7 +27,7 @@ export default function HumanBody() {
   // className={getDotClasses('head', s.head).join(' ') - 'head' - title from area
   
   return (
-    <div className={s.block_human_wrapper}>
+    // <div className={s.block_human_wrapper}>
       <div className={s.block_human}>
         <div className={getDotClasses('head', s.head).join(' ')}> </div> 
         <div className={getDotClasses('right_hand', s.right_hand).join(' ')}> </div>
@@ -55,7 +55,7 @@ export default function HumanBody() {
           <area onClick={getBodyArea} alt="small of the back" title="small_of_the_back" href="" coords="184,121,226,121,234,159,179,160" shape="poly"/>
         </map>
       </div>   
-    </div>
+    // </div>
   )
 }
 

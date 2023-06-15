@@ -1,4 +1,6 @@
-/* .content_wrapper {
-    height: 100%;
-} */
-
+.main_wrapper {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}

@@ -12,8 +12,7 @@ export default function SelectProblemPage() {
   console.log(page_name);
 
   return (
-    <div className='select_problem_page'>
-      
+    <div className={s.select_problem_page}>
       <div className={s.human_block}>
         <p>Please mark the place where you feel pain and move on to the next.</p>
         <HumanBody/>

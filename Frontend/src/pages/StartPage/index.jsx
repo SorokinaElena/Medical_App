@@ -12,7 +12,6 @@ export default function StartPage() {
   console.log(page_name);
 
   return (
-  // <div className='background_img_wrapper'>
     <div className={s.start_page}>
         <h2>Wellcome!</h2>
         <div className={s.explanation_text}>
@@ -24,8 +23,6 @@ export default function StartPage() {
         <Link to='/select_problem'>
         <Button page_name={page_name}>Let's start</Button>
         </Link>
-        
-      </div>
-  // </div>
+    </div>
   )
 }

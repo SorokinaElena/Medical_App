@@ -1,7 +1,16 @@
 .question_container {
+    min-height: 75vh;
+    width: calc(100vw-40px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* align-items: center; */
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .question p {
@@ -23,10 +32,10 @@
 }   
 
 .answers_block {
-    width: 100%;
+    width: calc(100vw-40px);
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .btns_answers {

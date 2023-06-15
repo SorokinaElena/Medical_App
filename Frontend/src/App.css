@@ -12,62 +12,37 @@
     color:#101011;    
 }
 
-/* h2 {
-    font-weight: 800;
-    color:#3875f6;
-    text-align: center;
-    text-shadow: 1px 1px 1px pink;
-} */
-
 /* https://www.icwebdesign.co.uk/common-viewport-sizes */
 /* https://highload.today/kak-ispolzovat-media-zaprosy-v-css/amp/ */
+
+.content_wrapper {
+    min-height: 568px; /*provides background to all height of content at a screen less then 568px*/
+    height: 100vh; /*provides page's height acourding to media-query*/
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 119, 245, 0.09);
+}
+
+.background_img {
+    background-image: url('./media/drawing_320.svg');
+    background-repeat: repeat-y;
+    opacity: 1;
+}
 
 
 
 /* iPhone 5 - 320 x 568 */
 @media (min-width: 320px) and (max-width: 359px) {
 
-    .background_wrapper {
+    .content_wrapper {
         min-width: 320px;
         max-width: 359px;
-        min-height: 100vh;
-        
-        background-color: rgba(0, 119, 245, 0.09);
-        opacity: 1;
-        z-index: -2;
-
-        /* background-image: url('./media/background_img_2.png');
-        background-repeat: no-repeat;
-        opacity: 1;
-        background-position: -23px 52px; */
-
-        
     }
 
-    .content_wrapper_without_img {
-        min-width: 320px;
-        max-width: 359px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .background_img {
         background-image: url('./media/drawing_320.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
-        background-position: -31px 57px;
-    }
-
-    .content_wrapper_with_img {
-        min-width: 320px;
-        max-width: 359px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url('./media/drawing_320.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
         background-position: -31px 57px;
     }
 
@@ -83,39 +58,13 @@
 /* Samsung Galaxy S8+ - 360 x 740 */
 @media (min-width: 360px) and (max-width: 389px) {
 
-    .background_wrapper {
+    .content_wrapper {
         min-width: 360px;
         max-width: 389px;
-        min-height: 100vh;
-        background-color: rgba(0, 119, 245, 0.09);
-        opacity: 1;
     }
 
-    .content_wrapper_without_img {
-        min-width: 360px;
-        max-width: 389px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .background_img {
         background-image: url('./media/drawing_360.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
-        background-position: -25px 57px;
-    }
-
-    .content_wrapper_with_img {
-        min-width: 360px;
-        max-width: 389px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url('./media/drawing_360.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
         background-position: -25px 57px;
     }
 
@@ -129,43 +78,15 @@
 }    
 
 /* iPhone 12 Pro -  390 x 844 */
-/* and (min-height: 569px) and (max-height: 844px) */
-/* middle-width - 355px middle-height - 707px */
 @media (min-width: 390px) and (max-width: 427px) {
 
-    .background_wrapper {
-        min-width: 361px;
-        max-width: 390px;
-        min-height: 100vh;
-        background-color: rgba(0, 119, 245, 0.09);
-        opacity: 1;
+    .content_wrapper {
+        min-width: 390px;
+        max-width: 427px;
     }
 
-    .content_wrapper_without_img {
-        min-width: 361px;
-        max-width: 390px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url('./media/drawing_390.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
-        background-position: -25px 70px;
-    }
-
-    .content_wrapper_with_img {
-        min-width: 361px;
-        max-width: 390px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url('./media/drawing_390.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
+    .background_img {
+        background-image: url('./media/drawing_360.svg');
         background-position: -25px 70px;
     }
 
@@ -179,44 +100,15 @@
 }    
 
 /* iPhone 12 Pro Max -  428 x 926 */
-/* and (min-height: 845px) and (max-height: 926px) */
-/* middle-width - 410px middle-height - 886px */
-
 @media (min-width: 428px) and (max-width: 479px) {
 
-    .background_wrapper {
-        min-width: 391px;
-        max-width: 428px;
-        min-height: 100vh;
-        background-color: rgba(0, 119, 245, 0.09);
-        opacity: 1;
+    .content_wrapper {
+        min-width: 428px;
+        max-width: 479px;
     }
 
-    .content_wrapper_without_img {
-        min-width: 391px;
-        max-width: 428px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .background_img {
         background-image: url('./media/drawing_390.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
-        background-position: -25px 75px;
-    }
-
-    .content_wrapper_with_img {
-        min-width: 391px;
-        max-width: 428px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url('./media/drawing_390.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
         background-position: -25px 75px;
     }
 
@@ -230,42 +122,15 @@
 }    
 
 /* Samsung Galaxy Note 5 - 480 x 853 */
-
 @media (min-width: 480px) and (max-width: 480px) {
 
-    .background_wrapper {
-        min-width: 429px;
+    .content_wrapper {
+        min-width: 480px;
         max-width: 480px;
-        min-height: 100vh;
-        background-color: rgba(0, 119, 245, 0.09);
-        opacity: 1;
     }
 
-    .content_wrapper_without_img {
-        min-width: 429px;
-        max-width: 480px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .background_img {
         background-image: url('./media/drawing_390.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
-        background-position: -25px 75px;
-    }
-
-    .content_wrapper_with_img {
-        min-width: 429px;
-        max-width: 480px;
-        min-height: 100vh;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-image: url('./media/drawing_390.svg');
-        background-repeat: repeat-y;
-        opacity: 1;
         background-position: -25px 75px;
     }
 
