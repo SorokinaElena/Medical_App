@@ -75,27 +75,31 @@ export default function Question() {
         </div>
 
         <div className={s.question}>
-          <div className={s.num_question}>{questions[questionNum].id}</div>
+          <div className={s.num_question_container}>
+            <div className={s.progressbar_1}></div>
+            <div className={s.progressbar_2}></div>
+            <div className={s.num_question}>{questions[questionNum].id}</div>
+          </div>
           
           <p>{questions[questionNum].question}</p>
           
-        <div className={s.answers_block}>
-          <div className={s.btns_answers}>
-            <button value={questions[questionNum].answer_green} onClick={questionNumIncr}><img src={green_smile} alt="green_smile" /></button>
-            <button value={questions[questionNum].answer_light_green} onClick={questionNumIncr}><img src={lightgreen_smile} alt="lightgreen_smile" /></button>
-            <button value={questions[questionNum].answer_light_yellow} onClick={questionNumIncr}><img src={yellow_smile} alt="yelow_smile" /></button>
-            <button value={questions[questionNum].answer_yellow} onClick={questionNumIncr}><img src={orange_smile} alt="orange_smile" /></button>
-            <button value={questions[questionNum].answer_orange} onClick={questionNumIncr}><img src={lightred_smile} alt="lightred_smile" /></button>
-            <button value={questions[questionNum].answer_red} onClick={questionNumIncr}><img src={red_smile} alt="red_smile" /></button>
-          </div>
-          <div className={s.btns_back_help}>
-          {
-            questionNum === 0 
-            ? <Link to='/select_problem'> <Button>return to problem choose</Button> </Link>
-            :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
-          }
-          </div>
-        </div>   
+          <div className={s.answers_block}>
+            <div className={s.btns_answers}>
+              <button value={questions[questionNum].answer_green} onClick={questionNumIncr}><img src={green_smile} alt="green_smile" /></button>
+              <button value={questions[questionNum].answer_light_green} onClick={questionNumIncr}><img src={lightgreen_smile} alt="lightgreen_smile" /></button>
+              <button value={questions[questionNum].answer_light_yellow} onClick={questionNumIncr}><img src={yellow_smile} alt="yelow_smile" /></button>
+              <button value={questions[questionNum].answer_yellow} onClick={questionNumIncr}><img src={orange_smile} alt="orange_smile" /></button>
+              <button value={questions[questionNum].answer_orange} onClick={questionNumIncr}><img src={lightred_smile} alt="lightred_smile" /></button>
+              <button value={questions[questionNum].answer_red} onClick={questionNumIncr}><img src={red_smile} alt="red_smile" /></button>
+            </div>
+            <div className={s.btns_back_help}>
+            {
+              questionNum === 0 
+              ? <Link to='/select_problem'> <Button>return to problem choose</Button> </Link>
+              :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
+            }
+            </div>
+          </div>   
       </div>     
     </div>
   )
