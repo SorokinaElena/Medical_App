@@ -75,11 +75,6 @@ export default function Question() {
         </div>
 
         <div className={s.question}>
-          <div className={s.num_question_container}>
-            <div className={s.progressbar_1}></div>
-            <div className={s.progressbar_2}></div>
-            <div className={s.num_question}>{questions[questionNum].id}</div>
-          </div>
           
           <p>{questions[questionNum].question}</p>
           
@@ -92,13 +87,26 @@ export default function Question() {
               <button value={questions[questionNum].answer_orange} onClick={questionNumIncr}><img src={lightred_smile} alt="lightred_smile" /></button>
               <button value={questions[questionNum].answer_red} onClick={questionNumIncr}><img src={red_smile} alt="red_smile" /></button>
             </div>
-            <div className={s.btns_back_help}>
-            {
-              questionNum === 0 
-              ? <Link to='/select_problem'> <Button>return to problem choose</Button> </Link>
-              :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
-            }
+
+            <div className={s.btn_container}>
+              <div className={s.btns_back_help}>
+              {
+                questionNum === 0 
+                ? <Link to='/select_problem'> <Button>go back</Button> </Link>
+                :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
+              }
+              </div>
+
+              <div className={s.num_question_container}>
+                <div className={s.progressbar_1}></div>
+                <div className={s.progressbar_2}></div>
+                <div className={s.progressbar_3}></div>
+                <div className={s.progressbar_4}></div>
+                <div className={s.num_question}>{questions[questionNum].id}</div>
+              </div>
             </div>
+            
+
           </div>   
       </div>     
     </div>

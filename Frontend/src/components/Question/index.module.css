@@ -4,17 +4,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: center; */
-
-    /* position: relative; */
 }
 
 .question {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-
-    /* position: relative; */
+    gap: 60px;
 }
 
 .question p {
@@ -26,6 +21,7 @@
 }
 
 .num_question {
+    border: none;
     border-radius: 15px; 
     background-color: #3875f6;  
     color: aliceblue;
@@ -34,7 +30,7 @@
     align-items: center;
     font-weight: 500;
 
-    position: absolute;
+    /* position: absolute; */
 }   
 
 .answers_block {
@@ -58,22 +54,43 @@
     background: transparent;
 }
 
+.btn_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* position: relative; */
+}
+
 .num_question_container {
     display: flex;
     position: relative;
+    z-index: 1;
 }
 
 .progressbar_1 {
     position: absolute;
     background-color: #be4ed4;
-    border-radius: 35px 0 0 35px;
+    border-radius: 150px 0 0 150px;
     z-index: -1;
 }
 
 .progressbar_2 {
     position: absolute;
+    background-color: #3875f6;
+    border-radius: 0 150px 150px 0;
+    z-index: -1;
+}
+
+.progressbar_3 {
+    position: absolute;
+    background-color: #3875f6;
+    z-index: -1;
+}
+
+.progressbar_4 {
+    position: absolute;
     background-color: #be4ed4;
-    border-radius: 0 35px 35px 0;
     z-index: -1;
 }
 
@@ -98,8 +115,6 @@
         height: 40px;
         border-radius: 20px;
         font-size: 16px;
-        bottom: 10px;
-        left: 10px;
     }
 
     .question p {
@@ -110,22 +125,39 @@
         font-size: 16px;
     }
 
-    /* .num_question_container {
-        min-height: 100px;
-    } */
+    .btn_container {
+        /* margin-bottom: 5px; */
+        margin-right: 5px;
+
+        position: relative;
+    }
 
     .progressbar_1 {
-        width: 30px;
-        height: 60px;
-        left: 0;
-        bottom: 0;
+        width: 22.5px;
+        height: 50px;
+        left: -6px;
+        top: -5px;
     }
 
     .progressbar_2 {
-        width: 30px;
-        height: 60px;
-        left: 30px;
-        bottom: 0;
+        width: 22.5px;
+        height: 50px;
+        right: -5px;
+        top: -5px;
+    }
+
+    .progressbar_3 {
+        width: 6px;
+        height: 25px;
+        left: 16.5px;
+        top: -5px;
+    }
+
+    .progressbar_4 {
+        width: 6px;
+        height: 25px;
+        left: 16.5px;
+        top: 20px;
     }
 
 }
