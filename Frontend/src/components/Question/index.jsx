@@ -25,6 +25,7 @@ export default function Question() {
   const navigate = useNavigate();
 
   const [ questionNum, setQuestionNum ] = useState(0);
+  // const [ circle, setCircle ] = useState({});
 
   const { answers, setAnswers } = useContext(Context);
 
@@ -62,6 +63,74 @@ export default function Question() {
   };
 
   console.log(answers);
+//   if (typeof circle != "undefined") {
+//     const circle = document.querySelector('circle');
+//   console.log(circle.r.baseVal.value);
+//   const radius = circle.r.baseVal.value;
+//   console.log(radius);
+//  }
+  // const circle = document.querySelector('circle');
+  // console.log(circle.r.baseVal.value);
+  // const radius = circle.r.baseVal.value;
+  // console.log(radius);
+  // const circumference = 2 * Math.PI * circle.r.baseVal.value;
+  // console.log(circumference)
+
+  let x_position = 0;
+  let y_position = 0;
+  let radius = 0;
+
+  // and (min-width: 320px)
+  if (window.matchMedia('screen and (max-width: 359px)').matches) {
+     x_position = 22.5;
+     y_position = 22.5;
+     radius = 21.25;   
+  };
+
+  if (window.matchMedia('screen and (min-width: 360px) and (max-width: 389px)').matches) {
+    x_position = 24;
+    y_position = 24;
+    radius = 22.5;   
+ };
+
+ if (window.matchMedia('screen and (min-width: 390px) and (max-width: 427px)').matches) {
+  x_position = 25;
+  y_position = 25;
+  radius = 23.5;   
+};
+
+if (window.matchMedia('screen and (min-width: 428px) and (max-width: 479px)').matches) {
+  x_position = 28;
+  y_position = 28;
+  radius = 26.5;   
+};
+
+// and (max-width: 480px)
+if (window.matchMedia('screen and (min-width: 480px)').matches) {
+  x_position = 31.5;
+  y_position = 31.5;
+  radius = 30;   
+};
+
+  const circle_lang = 2 * Math.PI * 21.25;
+  console.log(circle_lang);
+
+  let circle = {};
+  const setOffset = (percent) => {
+    let offset = circle_lang - circle_lang * percent / 100;
+    console.log(offset); 
+    circle = {
+      'strokeDasharray': `${circle_lang} ${circle_lang}`,
+      'strokeDashoffset': offset,
+    }
+  }
+
+  setOffset(80)
+
+  // const circle = {
+  //   'strokeDashoffset': '20',
+  // }
+ 
   
   return (
     <div className={s.question_container}>
@@ -97,18 +166,15 @@ export default function Question() {
               }
               </div>
 
-              <div className={s.num_question_container}>
-                <div className={s.progressbar_1}></div>
-                <div className={s.progressbar_2}></div>
-                <div className={s.progressbar_3}></div>
-                <div className={s.progressbar_4}></div>
+              <svg className={s.progress_ring}>
+                <circle className={s.circle} style={circle} cx={x_position} cy={y_position} r={radius} />
+              </svg>
+         
                 <div className={s.num_question}>{questions[questionNum].id}</div>
-              </div>
             </div>
             
-
           </div>   
       </div>     
     </div>
-  )
+  )  
 }
