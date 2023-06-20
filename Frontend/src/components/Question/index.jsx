@@ -25,44 +25,10 @@ export default function Question() {
   const navigate = useNavigate();
 
   const [ questionNum, setQuestionNum ] = useState(0);
-  // const [ circle, setCircle ] = useState({});
-
+  const [ offset, setOffset ] = useState(0);
   const { answers, setAnswers } = useContext(Context);
-
-  const addAnswer = (idx, answer) => {
-    const newAnswers = [...answers];
-    newAnswers[idx] = answer;
-    setAnswers(newAnswers);     
-  }     
   
-  const questionNumIncr = (event) => {
-    event.preventDefault();
-    let target = event.target;
-    while (target.tagName.toLowerCase() !== "button") {
-    target = target.parentNode;
-}
-    if (questionNum < 35) {
-      const answer = target.value;
-      const idx = questionNum;
-      addAnswer(idx, answer)
-      setQuestionNum(questionNum + 1);
-    } else if (questionNum === 35) {
-      const answer = target.value;
-      const idx = 35;
-      addAnswer(idx, answer)
-      navigate('/user_info')
-    } 
-  };
-
-  const questionNumDecr = () => {
-    if (questionNum > 0) {
-      setQuestionNum(questionNum - 1);
-    } else {
-      setQuestionNum(questionNum = 0);
-    }
-  };
-
-  console.log(answers);
+  const circle_part_percent = 100 / 36;
 
   let x_position = 0;
   let y_position = 0;
@@ -109,9 +75,9 @@ if (window.matchMedia('screen and (min-width: 480px)').matches) {
   countCircleLang(radius);
 };
 
-  let circle_style = {};
+let circle_style = {};
 
-  const setOffset = (percent) => {
+  const calculateOffset = (percent) => {
     let offset = circle_lang - circle_lang * percent / 100;
     console.log(offset); 
     circle_style = {
@@ -120,7 +86,47 @@ if (window.matchMedia('screen and (min-width: 480px)').matches) {
     }
   }
 
-  setOffset(90)
+  calculateOffset(offset);
+
+  const addAnswer = (idx, answer) => {
+    const newAnswers = [...answers];
+    newAnswers[idx] = answer;
+    setAnswers(newAnswers);     
+  }     
+  
+  const questionNumIncr = (event) => {
+    event.preventDefault();
+    let target = event.target;
+    while (target.tagName.toLowerCase() !== "button") {
+    target = target.parentNode;
+}
+    if (questionNum < 35) {
+      const answer = target.value;
+      const idx = questionNum;
+      addAnswer(idx, answer)
+      setQuestionNum(questionNum + 1);
+      setOffset(offset + circle_part_percent);
+      calculateOffset(offset);
+    } else if (questionNum === 35) {
+      const answer = target.value;
+      const idx = 35;
+      addAnswer(idx, answer)
+      navigate('/user_info')
+    } 
+  };
+
+  const questionNumDecr = () => {
+    if (questionNum > 0) {
+      setQuestionNum(questionNum - 1);
+      setOffset(offset - circle_part_percent);
+      calculateOffset(offset);
+    } else {
+      setQuestionNum(questionNum = 0);
+    }
+  };
+
+  console.log(answers);
+
   
   return (
     <div className={s.question_container}>
