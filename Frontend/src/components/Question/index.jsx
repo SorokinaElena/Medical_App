@@ -24,12 +24,12 @@ export default function Question() {
 
   const navigate = useNavigate();
 
-  const [ questionNum, setQuestionNum ] = useState(0);
-  const [ offset, setOffset ] = useState(0);
-  const { answers, setAnswers } = useContext(Context);
-  
   const circle_part_percent = 100 / 36;
 
+  const [ questionNum, setQuestionNum ] = useState(0);
+  const [ offset, setOffset ] = useState(circle_part_percent);
+  const { answers, setAnswers } = useContext(Context);
+  
   let x_position = 0;
   let y_position = 0;
   let radius = 0;

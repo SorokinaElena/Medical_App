@@ -13,20 +13,20 @@
 }
 
 .human_block > p {
-    visibility: hidden;
+    /* visibility: hidden; */
     text-align: start;
     font-weight: 600;  
     margin: 0 0 5px 0;      
     color: black;
 
-    animation-name: p_1;
+    /* animation-name: p_1;
     animation-delay: 0.5s;
     animation-duration: 2s;
     animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
 }
 
-@keyframes p_1 {
+/* @keyframes p_1 {
     from { 
         visibility: hidden;
       }
@@ -36,7 +36,7 @@
 
     0%   {color: transparent;}
     100%  {color: black;}
-}
+} */
 
 @media (min-width: 320px) and (max-width: 359px) {
 
