@@ -4,11 +4,10 @@ import { useForm } from 'react-hook-form';
 import { Context } from '../../context';
 import s from './index.module.css';
 import Button from '../Button';
-import { AiFillCaretRight } from 'react-icons/ai';
 import { AiFillCaretDown } from 'react-icons/ai';
-import { AiOutlineEdit } from 'react-icons/ai';
 
-export default function FormValidation() {
+
+export default function UserInfoForm() {
 
 const { bmi, setBmi } = useContext(Context);
 

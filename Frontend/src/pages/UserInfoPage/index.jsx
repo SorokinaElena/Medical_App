@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import FormValidation from '../../components/FormValidation';
+import UserInfoForm from '../../components/UserInfoForm';
 import Therapy from '../../components/Therapy';
 import { Context } from '../../context';
 import s from './index.module.css';
@@ -17,7 +17,7 @@ export default function UserInfoPage() {
   
   return (
     <div className={s.user_info_page}>
-      <FormValidation />
+      <UserInfoForm />
       {/* <div className={s.therapy_container}>
         {
           therapy_list.map(el => <Therapy key={el.id} {...el} />)
