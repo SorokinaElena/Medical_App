@@ -4,13 +4,16 @@ import { useForm } from 'react-hook-form';
 import { Context } from '../../context';
 import s from './index.module.css';
 import Button from '../Button';
+import { AiFillCaretRight } from 'react-icons/ai';
+import { AiFillCaretDown } from 'react-icons/ai';
+import { AiOutlineEdit } from 'react-icons/ai';
 
 export default function FormValidation() {
 
 const { bmi, setBmi } = useContext(Context);
 
-const addAnswer = (params) => {
-  setBmi(params);     
+const addAnswer = (data) => {
+  setBmi(data);     
 }  
 
 const submit = (data) => {
@@ -23,40 +26,58 @@ const { register, handleSubmit, formState: { errors }} = useForm({
     mode: 'onBlur'
 });
 
-const heightRegex = /^\d{2,3}$/;
-const weightRegex = /^\d{1,3}$/;
-const ageRegex = /^\d{1,3}$/;
+// const heightRegex = /^\d{2,3}$/;
+// const weightRegex = /^\d{1,3}$/;
+// const ageRegex = /^\d{1,3}$/;
 
 const heightRegister = register('height', { 
-    required: 'Required field',
-    pattern: {
-        value: heightRegex,
-        message: 'Not valid height format'
-    } 
+    required: true,   /* 'Required field' */
+    type: "number",
+    minLength: 2,
+    maxLength: 3,
+    min: 10,
+    max: 251,
+    // pattern: {
+    //     value: heightRegex,
+    //     message: 'Not valid height format'
+    // } 
 });
 
+// console.log(heightRegister)
+
 const weightRegister = register('weight', { 
-    required: 'Required field',
-    pattern: {
-        value: weightRegex,
-        message: 'Not valid weight format'
-    } 
+    required: true,
+    type: "number",
+    minLength: 1,
+    maxLength: 3,
+    min: 1,
+    max: 727,
+    // pattern: {
+    //     value: weightRegex,
+    //     message: 'Not valid weight format'
+    // } 
 });
 
 const ageRegister = register('age', { 
-    required: 'Required field',
-    pattern: {
-        value: ageRegex,
-        message: 'Not valid age format'
-    } 
+    required: true,
+    type: "number",
+    minLength: 1,
+    maxLength: 3,
+    min: 1,
+    max: 150,
+    // pattern: {
+    //     value: ageRegex,
+    //     message: 'Not valid age format'
+    // } 
 });
 
   return (
     <form onSubmit={handleSubmit(submit)}>
-      <div className={s.input_container}>
+
+      <div className={s.inputs_container}>
         <div className={s.input_box}>
           <label>Height</label>
-          <input type="number" name='height' placeholder='175' autoComplete="off" {...heightRegister}/>
+          <input type="number" name='height' placeholder='180' autoComplete="off" {...heightRegister}/>
         </div>
         <div className={s.input_box}>
           <label>Weight</label>
@@ -64,25 +85,26 @@ const ageRegister = register('age', {
         </div>
         <div className={s.input_box}>
           <label>Age</label>
-          <input type="number" name='age' placeholder='50' autoComplete="off" {...ageRegister}/>
+          <input type="number" name='age' placeholder='45' autoComplete="off" {...ageRegister}/>
         </div>
       </div>
-        
-        <div className={s.btn}>
-          < Button>Confirm</Button>
-        </div>
-        
-        {/* <button className={s.btn}>Confirm</button> */}
 
-        <div>
-          { errors?.height && <p> {errors?.height?.message } </p>}
+      <div className={s.errors_container}>
+        <div className={s.error_container_height}>
+          {errors?.height && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
         </div>
-        <div>
-          { errors?.weight && <p> {errors?.weight?.message } </p>}
+        <div className={s.error_container_weight}>
+          {errors?.weight && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
         </div>
-        <div>
-          { errors?.age && <p> {errors?.age?.message } </p>}
-        </div>
+        <div className={s.error_container_age}>
+          {errors?.age && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
+        </div> 
+      </div>
+        
+          <Button>confirm</Button>
+
     </form>
   )
 }
+
+// https://www.youtube.com/watch?v=Jxfun6Jnt5Q&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9

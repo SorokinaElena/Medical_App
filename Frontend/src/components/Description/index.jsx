@@ -6,7 +6,7 @@ export default function Description() {
 
   const { description, setDescription } = useContext(Context);
 
-  const addDescription = (event) => {
+  // const addDescription = (event) => {
     // event.preventDefault();
     // let target = event.target;
     // while (target.tagName.toLowerCase() !== "button") {
@@ -19,16 +19,18 @@ export default function Description() {
     // };
     // console.log(answer)
     // setTherapy([...therapy, answer])
-  };
+  // };
+
+  const addDescription = (event) => {
+    console.log(event.target.value)
+  }
 
   console.log(description)
 
   return (
-    <div>
         <div className={s.input_box}>
           <label>Сomment</label>
-          <textarea type="text" name="users_commit" maxLength="255" />
+          <textarea type="text" name="users_commit" maxLength="255" onInput={addDescription}/>
         </div>
-    </div>
   )
 }

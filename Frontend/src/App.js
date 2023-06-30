@@ -41,7 +41,7 @@ function App() {
         user_answers: answers,
         user_bmi: bmi,
         user_therapy: therapy,
-        // user_description: description,
+        user_description: description,
       }
       console.log(userData);
       postUserData(userData, (res) => {  // res from server

@@ -1,30 +1,73 @@
-.input_container{
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  position: relative;
+}
+
+.inputs_container, 
+.errors_container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.input_box{
+.input_box {
   position: relative;
 }
 
-input {
-  background: #fff;
-  padding: 10px;
+.input_box > input {
+  background: transparent;
+  padding: 15px 10px 10px 10px;
   border-radius: 11px;
   width: 80px;
   border: 2px solid #4875f7;
+  font-size: 16px;
 }
 
-label {
+.input_box input:focus {
+  outline: none;
+  border: 2.5px solid #be4ed4;
+}
+
+.input_box > label {
   position: absolute;
   top: -10px;
   left: 5px;
-  background: #fff;
+  background-color: #ebf5fe;
   padding: 0 5px;
+  color: #4875f7;
+  font-weight: 500;
 }
 
-.btn {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
+.errors_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.error_container_height,
+.error_container_weight,
+.error_container_age {
+  background: transparent;
+  width: 80px;
+  font-size: 16px;
+}
+
+.error_message {
+  background: transparent;
+  padding: 5px 10px 10px 10px;
+  border-radius: 11px;
+  width: 80px;
+  border: none;
+  font-size: 16px;
+}
+
+.required_icon {
+  fill: #be4ed4;
+  font-size: 16px;
 }

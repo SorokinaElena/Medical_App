@@ -20,7 +20,7 @@ import lightred_smile from '../../media/lightred_smile.png';
 import red_smile from '../../media/red_smile.png';
 
 
-export default function Question() {
+export default function Question({page_name}) {
 
   const navigate = useNavigate();
 
@@ -158,7 +158,7 @@ let circle_style = {};
               {
                 questionNum === 0 
                 ? <Link to='/select_problem'> <Button>go back</Button> </Link>
-                :<button onClick={questionNumDecr} className={s.btn_back}>go back</button>
+                :<Button page_name={page_name} questionNumDecr={questionNumDecr}>go back</Button>
               }
               </div>
 
@@ -166,7 +166,7 @@ let circle_style = {};
                 <circle className={s.circle} style={circle_style} cx={x_position} cy={y_position} r={radius} />
               </svg>
          
-                <div className={s.num_question}>{questions[questionNum].id}</div>
+              <div className={s.num_question}>{questions[questionNum].id}</div>
             </div>
             
           </div>   
