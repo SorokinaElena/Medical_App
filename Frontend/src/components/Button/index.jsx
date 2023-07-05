@@ -21,9 +21,9 @@ export default function Button({children, page_name, questionNumDecr}) {
   } else if (page_name === 'question_page') {
     btn_page_name = s.btn_question_page;
     func = questionNumDecr;
-  } else if (page_name === 'user_info_page') {
+  } else if (page_name === 'user_info_page' ) {
     btn_page_name = s.btn_user_info_page;
-    func = collectUserDataForRequest;
+    // func = collectUserDataForRequest;
   }
 
   return (

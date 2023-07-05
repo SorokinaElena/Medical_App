@@ -1,10 +1,11 @@
 import React from 'react';
 import { useContext } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormState } from 'react-hook-form';
 import { Context } from '../../context';
 import s from './index.module.css';
 import Button from '../Button';
 import { AiFillCaretDown } from 'react-icons/ai';
+import Description from '../Description';
 
 
 export default function UserInfoForm() {
@@ -21,7 +22,7 @@ const submit = (data) => {
 
 console.log(bmi);
 
-const { register, handleSubmit, formState: { errors }} = useForm({
+const { register, handleSubmit, formState: { errors }, control } = useForm({
     mode: 'onBlur'
 });
 
@@ -70,6 +71,20 @@ const ageRegister = register('age', {
     // } 
 });
 
+const commentRegister = register('comment', { 
+  // required: true,
+  type: "string",
+  maxLength: 255,
+  // pattern: {
+  //     value: ageRegex,
+  //     message: 'Not valid age format'
+  // } 
+});
+
+const { dirtyFields } = useFormState({
+  control
+});
+
   return (
     <form onSubmit={handleSubmit(submit)}>
 
@@ -99,8 +114,10 @@ const ageRegister = register('age', {
           {errors?.age && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
         </div> 
       </div>
+
+      <Description commentRegister={commentRegister}/>
         
-          <Button>confirm</Button>
+      <Button>confirm</Button>
 
     </form>
   )

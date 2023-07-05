@@ -13,12 +13,12 @@ import { postUserData } from './requests/postUserData';
 
 function App() {
 
-  let page_name = '';
-
   const navigate = useNavigate();
 
+  let page_name = '';
   const [ bodyArea, setBodyArea ] = useState([]);
   const [checked, setChecked ] = useState(false);
+  const [ questionNum, setQuestionNum ] = useState(0);
   const [ answers, setAnswers ] = useState([]);
   const [ bmi, setBmi ] = useState([]);
   const [ therapy, setTherapy ] = useState([]);
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions, page_name}}>
+      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, questionNum, setQuestionNum, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions, page_name }}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<StartPage />} />

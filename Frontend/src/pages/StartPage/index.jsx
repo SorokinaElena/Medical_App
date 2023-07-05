@@ -8,8 +8,11 @@ import { Context } from '../../context';
 export default function StartPage() {
 
   let { page_name } = useContext(Context);
+  const { questionNum, setQuestionNum } = useContext(Context);
   page_name = 'start_page';
   console.log(page_name);
+  setQuestionNum(0);
+  console.log(questionNum);
 
   return (
     <div className={s.start_page}>

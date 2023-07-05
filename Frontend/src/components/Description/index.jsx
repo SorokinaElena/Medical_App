@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import s from './index.module.css';
 import { Context } from '../../context';
 
-export default function Description() {
+export default function Description({ commentRegister }) {
 
-  const { description, setDescription } = useContext(Context);
+  // const { description, setDescription } = useContext(Context);
 
   // const addDescription = (event) => {
     // event.preventDefault();
@@ -21,16 +21,22 @@ export default function Description() {
     // setTherapy([...therapy, answer])
   // };
 
-  const addDescription = (event) => {
-    console.log(event.target.value)
-  }
+  // const addDescription = (data) => {
+  //   setDescription(data);
+  // }
 
-  console.log(description)
+  // const inputDescription = (event) => {
+  //   event.preventDefault();
+  //   const data = event.target.value;
+  //   addDescription(data);
+  // }
+
+  // console.log(description);
 
   return (
         <div className={s.input_box}>
           <label>Сomment</label>
-          <textarea type="text" name="users_commit" maxLength="255" onInput={addDescription}/>
+          <textarea type="text" name="users_commit" maxLength="255" {...commentRegister}/>
         </div>
   )
 }

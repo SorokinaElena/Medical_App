@@ -26,10 +26,10 @@ export default function Question({page_name}) {
 
   const circle_part_percent = 100 / 36;
 
-  const [ questionNum, setQuestionNum ] = useState(0);
-  const [ offset, setOffset ] = useState(circle_part_percent);
-  const { answers, setAnswers } = useContext(Context);
-  
+  // const [ questionNum, setQuestionNum ] = useState(0);
+  const { questionNum, setQuestionNum, answers, setAnswers } = useContext(Context);
+  const [ offset, setOffset ] = useState(questionNum === 35 ? 100 : circle_part_percent);
+
   let x_position = 0;
   let y_position = 0;
   let radius = 0;
@@ -109,9 +109,12 @@ let circle_style = {};
       calculateOffset(offset);
     } else if (questionNum === 35) {
       const answer = target.value;
-      const idx = 35;
-      addAnswer(idx, answer)
+      // const idx = 35;
+      const idx = questionNum;
+      addAnswer(idx, answer);
+      setQuestionNum(idx);
       navigate('/user_info')
+      console.log(questionNum);
     } 
   };
 
@@ -126,6 +129,7 @@ let circle_style = {};
   };
 
   console.log(answers);
+  console.log(questionNum);
 
   
   return (
@@ -174,3 +178,6 @@ let circle_style = {};
     </div>
   )  
 }
+
+// https://www.w3schools.com/html/html5_svg.asp
+// https://www.youtube.com/watch?v=amrIqeOXQW0&ab_channel=GloAcademy
