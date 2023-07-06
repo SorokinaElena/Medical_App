@@ -15,7 +15,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  let page_name = '';
+  const [ pageName, setPageName ] = useState();
   const [ bodyArea, setBodyArea ] = useState([]);
   const [checked, setChecked ] = useState(false);
   const [ questionNum, setQuestionNum ] = useState(0);
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, questionNum, setQuestionNum, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions, page_name }}>
+      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, questionNum, setQuestionNum, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, description, setDescription, response, questions, pageName, setPageName}}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<StartPage />} />

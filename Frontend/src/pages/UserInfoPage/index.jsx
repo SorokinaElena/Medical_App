@@ -12,12 +12,12 @@ export default function UserInfoPage() {
 
   const { collectUserDataForRequest } = useContext(Context);
 
-  const { questionNum, setQuestionNum } = useContext(Context);
-  let { page_name } = useContext(Context);
-  page_name = 'user_info_page';
+  const { questionNum, setQuestionNum, answers, pageName, setPageName } = useContext(Context);
+  setPageName('user_info_page');
 
-  console.log(page_name);
+  console.log(pageName);
   console.log(questionNum);
+  console.log(answers);
   
   return (
     <div className={s.user_info_page}>
@@ -33,8 +33,8 @@ export default function UserInfoPage() {
       </div> */}
 
       <div className={s.btn_container}>
-        <Link to='/question'> <Button page_name={page_name}>go back</Button> </Link>
-        <Button page_name={page_name}>get tips</Button>
+        <Link to='/question'> <Button>go back</Button> </Link>
+        <Button page_name={pageName}>get tips</Button>
       </div>
       
       

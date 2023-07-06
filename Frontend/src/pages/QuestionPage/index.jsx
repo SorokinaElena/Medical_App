@@ -5,13 +5,13 @@ import s from './index.module.css';
 
 export default function QuestionPage() {
 
-let { page_name } = useContext(Context);
-page_name = 'question_page'
-console.log(page_name);
+const { pageName, setPageName } = useContext(Context);
+setPageName('question_page');
+console.log(pageName);
 
   return (
     <div className={s.question_page}>
-      <Question page_name={page_name}/>
+      <Question page_name={pageName}/>
     </div>
   )
 }

@@ -7,10 +7,9 @@ import { Context } from '../../context';
 
 export default function StartPage() {
 
-  let { page_name } = useContext(Context);
-  const { questionNum, setQuestionNum } = useContext(Context);
-  page_name = 'start_page';
-  console.log(page_name);
+  const { questionNum, setQuestionNum, pageName, setPageName } = useContext(Context);
+  setPageName('start_page');
+  console.log(pageName);
   setQuestionNum(0);
   console.log(questionNum);
 
@@ -24,7 +23,7 @@ export default function StartPage() {
         </div>
 
         <Link to='/select_problem'>
-        <Button page_name={page_name}>Let's start</Button>
+        <Button page_name={pageName}>Let's start</Button>
         </Link>
     </div>
   )
