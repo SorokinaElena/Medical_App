@@ -72,7 +72,7 @@ const ageRegister = register('age', {
 });
 
 const commentRegister = register('comment', { 
-  // required: true,
+  required: true,
   type: "string",
   maxLength: 255,
   // pattern: {
@@ -88,34 +88,42 @@ const { dirtyFields } = useFormState({
   return (
     <form onSubmit={handleSubmit(submit)}>
 
-      <div className={s.inputs_container}>
-        <div className={s.input_box}>
-          <label>Height</label>
-          <input type="number" name='height' placeholder='180' autoComplete="off" {...heightRegister}/>
+      {/* <select {...register('category')}>
+        <option value=''>Select...</option>
+        <option value='A'>Category A</option>
+        <option value='B'>Category B</option>
+      </select> */}
+
+      <div className={s.bmi_container}>
+        <div className={s.inputs_container}>
+          <div className={s.input_box}>
+            <label>Height</label>
+            <input type="number" name='height' placeholder='180' autoComplete="off" {...heightRegister}/>
+          </div>
+          <div className={s.input_box}>
+            <label>Weight</label>
+            <input type="number" name='weight' placeholder='85' autoComplete="off" {...weightRegister}/>
+          </div>
+          <div className={s.input_box}>
+            <label>Age</label>
+            <input type="number" name='age' placeholder='45' autoComplete="off" {...ageRegister}/>
+          </div>
         </div>
-        <div className={s.input_box}>
-          <label>Weight</label>
-          <input type="number" name='weight' placeholder='85' autoComplete="off" {...weightRegister}/>
-        </div>
-        <div className={s.input_box}>
-          <label>Age</label>
-          <input type="number" name='age' placeholder='45' autoComplete="off" {...ageRegister}/>
+
+        <div className={s.errors_container}>
+          <div className={s.error_container_height}>
+            {errors?.height && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
+          </div>
+          <div className={s.error_container_weight}>
+            {errors?.weight && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
+          </div>
+          <div className={s.error_container_age}>
+            {errors?.age && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
+          </div> 
         </div>
       </div>
 
-      <div className={s.errors_container}>
-        <div className={s.error_container_height}>
-          {errors?.height && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
-        </div>
-        <div className={s.error_container_weight}>
-          {errors?.weight && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
-        </div>
-        <div className={s.error_container_age}>
-          {errors?.age && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
-        </div> 
-      </div>
-
-      <Description commentRegister={commentRegister}/>
+      <Description commentRegister={commentRegister} errors={errors}/>
         
       <Button>confirm</Button>
 
@@ -124,3 +132,4 @@ const { dirtyFields } = useFormState({
 }
 
 // https://www.youtube.com/watch?v=Jxfun6Jnt5Q&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9
+// https://webformyself.com/ispolzovanie-localstorage-s-react-hooks/

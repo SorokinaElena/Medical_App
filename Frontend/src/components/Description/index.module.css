@@ -1,3 +1,8 @@
+.description_wrapper {
+  width: 100%;
+  position: relative;
+}
+  
   .input_box {
     width: 100%;
     position: relative;
@@ -19,11 +24,30 @@
     border-radius: 11px;
     width: 100%;
     min-height: 155px;
-    /* font-size: 16px; */
+    z-index: 1;
   }
 
   .input_box textarea:focus {
     outline: none;
+  }
+
+  .error_container_comment {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .error_message {
+    background: transparent;
+    padding: 15px 10px 10px 10px;
+    border-radius: 11px;
+    border: none;
+  }
+  
+  .required_icon {
+    fill: #be4ed4;
   }
 
   @media (max-width: 359px) {
@@ -39,6 +63,18 @@
 
     .input_box textarea:focus {
       border: 2.7px solid #be4ed4;
+    }
+
+    .error_container_comment {
+      width: 80px;
+    }
+
+    .error_message {
+      font-size: 16px;
+    }
+  
+    .required_icon {
+      font-size: 16px;
     }
   }
   
@@ -56,6 +92,18 @@
     .input_box textarea:focus {
       border: 2.7px solid #be4ed4;
     }
+
+    .error_container_comment {
+      width: 95px;
+    }
+
+    .error_message {
+      font-size: 18px;
+    }
+  
+    .required_icon {
+      font-size: 18px;
+    }
   }
   
   @media (min-width: 390px) and (max-width: 427px) {
@@ -71,6 +119,18 @@
 
     .input_box textarea:focus {
       border: 3px solid #be4ed4;
+    }
+
+    .error_container_comment {
+      width: 100px;
+    }
+
+    .error_message {
+      font-size: 20px;
+    }
+  
+    .required_icon {
+      font-size: 20px;
     }
   }
   
@@ -88,6 +148,19 @@
     .input_box textarea:focus {
       border: 3.5px solid #be4ed4;
     }
+
+    .error_container_comment {
+      width: 110px;
+
+    }
+
+    .error_message {
+      font-size: 22px;
+    }
+  
+    .required_icon {
+      font-size: 22px;
+    }
   }
   
   @media (min-width: 480px) and (max-width: 480px) {
@@ -103,5 +176,17 @@
 
     .input_box textarea:focus {
       border: 3.5px solid #be4ed4;
+    }
+
+    .error_container_comment {
+      width: 110px;
+    }
+
+    .error_message {
+      font-size: 22px;
+    }
+  
+    .required_icon {
+      font-size: 22px;
     }
   }

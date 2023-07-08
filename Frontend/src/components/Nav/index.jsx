@@ -6,7 +6,7 @@ import s from './index.module.css';
 export default function Nav() {
   return (
     <nav className={s.nav}>
-      <Link to='/'>
+      <Link to='/select_problem'>
         <img src={logo} alt="Logo" className={s.logo}/>
       </Link>
     </nav>

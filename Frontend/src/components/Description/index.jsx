@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import s from './index.module.css';
 import { Context } from '../../context';
+import { AiFillCaretDown } from 'react-icons/ai';
 
-export default function Description({ commentRegister }) {
+export default function Description({ commentRegister, errors }) {
 
   // const { description, setDescription } = useContext(Context);
 
@@ -34,9 +35,15 @@ export default function Description({ commentRegister }) {
   // console.log(description);
 
   return (
+      <div className={s.description_wrapper}>
         <div className={s.input_box}>
           <label>Сomment</label>
           <textarea type="text" name="users_commit" maxLength="255" {...commentRegister}/>
         </div>
+        <div className={s.error_container_comment}>
+          {errors?.comment && <div className={s.error_message}> <AiFillCaretDown className={s.required_icon} /> </div>}
+        </div>
+        
+      </div>
   )
 }
