@@ -1,11 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
-import { useForm, useFormState } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Context } from '../../context';
 import s from './index.module.css';
 import Button from '../Button';
 import { AiFillCaretDown } from 'react-icons/ai';
 import Description from '../Description';
+import useFormPersist from 'react-hook-form-persist';
 
 
 export default function UserInfoForm() {
@@ -22,8 +23,14 @@ const submit = (data) => {
 
 console.log(bmi);
 
-const { register, handleSubmit, formState: { errors }, control } = useForm({
-    mode: 'onBlur'
+const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm({
+    mode: 'onBlur',
+});
+
+useFormPersist("storageKey", {
+  watch, 
+  setValue,
+  // storage: window.localStorage, //  default window.sessionStorage
 });
 
 // const heightRegex = /^\d{2,3}$/;
@@ -81,10 +88,6 @@ const commentRegister = register('comment', {
   // } 
 });
 
-const { dirtyFields } = useFormState({
-  control
-});
-
   return (
     <form onSubmit={handleSubmit(submit)}>
 
@@ -133,3 +136,4 @@ const { dirtyFields } = useFormState({
 
 // https://www.youtube.com/watch?v=Jxfun6Jnt5Q&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9
 // https://webformyself.com/ispolzovanie-localstorage-s-react-hooks/
+// https://www.npmjs.com/package/react-hook-form-persist

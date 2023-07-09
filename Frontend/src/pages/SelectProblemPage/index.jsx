@@ -7,9 +7,11 @@ import { Context } from '../../context';
 
 export default function SelectProblemPage() {
 
-  const { pageName, setPageName } = useContext(Context);
+  const { pageName, setPageName, questionNum, setQuestionNum } = useContext(Context);
   setPageName('select_problem_page');
   console.log(pageName);
+  setQuestionNum(0);
+  console.log(questionNum);
 
   return (
     <div className={s.select_problem_page}>
