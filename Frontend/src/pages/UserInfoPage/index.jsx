@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react';
 import UserInfoForm from '../../components/UserInfoForm';
-import Therapy from '../../components/Therapy';
 import { Context } from '../../context';
 import s from './index.module.css';
-import { therapy_list } from './data/therapy_list';
-import Description from '../../components/Description';
 import Button from '../../components/Button';
 import { Link } from 'react-router-dom';
+import AddTherapyForm from '../../components/AddTherapyForm';
+
 
 export default function UserInfoPage() {
 
@@ -31,6 +30,8 @@ export default function UserInfoPage() {
       {/* <div className={s.btn_conteiner} >
         <button className={s.btn} onClick={collectUserDataForRequest}>get tips</button>
       </div> */}
+
+      <AddTherapyForm />
 
       <div className={s.btn_container}>
         <Link to='/question'> <Button>go back</Button> </Link>

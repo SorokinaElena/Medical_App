@@ -1,0 +1,9 @@
+.select_form {
+    width: 100%;
+}
+
+.select_therapy_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

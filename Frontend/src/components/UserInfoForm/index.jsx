@@ -7,6 +7,7 @@ import Button from '../Button';
 import { AiFillCaretDown } from 'react-icons/ai';
 import Description from '../Description';
 import useFormPersist from 'react-hook-form-persist';
+// import Therapy from '../Therapy';
 
 
 export default function UserInfoForm() {
@@ -25,6 +26,13 @@ console.log(bmi);
 
 const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm({
     mode: 'onBlur',
+    // defaultValues: {
+    //   height: 0,
+    //   weight: 0,
+    //   age: 0,
+    //   comment: '',
+    //   therapy: [],
+    // }
 });
 
 useFormPersist("storageKey", {
@@ -82,20 +90,15 @@ const commentRegister = register('comment', {
   required: true,
   type: "string",
   maxLength: 255,
-  // pattern: {
-  //     value: ageRegex,
-  //     message: 'Not valid age format'
-  // } 
 });
+
+// const therapyRegister = register('therapy', { 
+//   required: true,
+//   type: [],
+// });
 
   return (
     <form onSubmit={handleSubmit(submit)}>
-
-      {/* <select {...register('category')}>
-        <option value=''>Select...</option>
-        <option value='A'>Category A</option>
-        <option value='B'>Category B</option>
-      </select> */}
 
       <div className={s.bmi_container}>
         <div className={s.inputs_container}>
