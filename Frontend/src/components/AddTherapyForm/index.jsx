@@ -4,37 +4,44 @@ import { useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist'
 import Button from '../Button';
 import { Context } from '../../context';
+import TherapyItem from '../TherapyItem';
 
 export default function AddTherapyForm() {
 
-    const { therapy, setTherapy } = useContext(Context);
+    const { therapy, setTherapy, therapyList, setTherapyList } = useContext(Context);
 
-    // const addTherapy = (data) => {
-    //     const new_therapies = [...therapy];
-    //     new_therapies.push(data);
-    //     setTherapy(new_therapies);    
-    //   }  
+    const addTherapy = (data) => {
+        const new_therapy = [...therapy, data];
+        // const if_exist_therapy = (data.value) => {
+        //     therapy.map
+        // }
+        // new_therapy.map(el => <TherapyItem />)
+        setTherapy(new_therapy);    
+      }  
       
     const submit = (data) => {
-        // addTherapy(data);
-        console.log(data);
+        addTherapy(data);
       }
 
     const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm({
         mode: 'onBlur',
+        defaultValues: {
+            therapy: '',
+            reaction: '',
+        }
     });
 
-    useFormPersist("storageKey", {
-        watch, 
-        setValue,
-        // storage: window.localStorage, //  default window.sessionStorage
-    });
+    // useFormPersist("storageKey", {
+    //     watch, 
+    //     setValue,
+    //     storage: window.localStorage, //  default window.sessionStorage
+    // });
 
     const therapyRegister = register('therapy');  
 
     const reactionRegister = register('reaction');  
 
-    // console.log(therapy);
+    console.log(therapy);
 
 
   return (
