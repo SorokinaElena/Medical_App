@@ -21,7 +21,7 @@ function App() {
   const [ questionNum, setQuestionNum ] = useState(0);
   const [ answers, setAnswers ] = useState([]);
   const [ bmi, setBmi ] = useState([]);
-  const [ therapy, setTherapy ] = useState([]);
+  const [ therapies, setTherapies ] = useState([]);
   const [ therapyList, setTherapyList ] = useState([]);
   // const [ description, setDescription ] = useState([]);
   const [ response, setResponse ] = useState([]);
@@ -41,7 +41,7 @@ function App() {
         user_body_areas: bodyArea,
         user_answers: answers,
         user_bmi: bmi,
-        user_therapy: therapy,
+        user_therapy: therapies,
         // user_description: description,
       }
       console.log(userData);
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, questionNum, setQuestionNum, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapy, setTherapy, therapyList, setTherapyList, response, questions, pageName, setPageName}}>
+      <Context.Provider value={{bodyArea, setBodyArea, toggleBodyArea, checked, questionNum, setQuestionNum, answers, setAnswers, collectUserDataForRequest, bmi, setBmi, therapies, setTherapies, therapyList, setTherapyList, response, questions, pageName, setPageName}}>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<StartPage />} />

@@ -16,8 +16,8 @@
 /* https://highload.today/kak-ispolzovat-media-zaprosy-v-css/amp/ */
 
 .content_wrapper {
-    min-height: 568px; /*provides background to all height of content at a screen less then 568px*/
-    height: 100vh; /*provides page's height acourding to media-query*/
+    /* min-height: 568px; provides background to all height of content at a screen less then 568px */
+    min-height: 100vh; /*provides page's height acourding to media-query*/
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,6 @@
 }
 
 .background_img {
-    background-image: url('./media/drawing_320.svg');
     background-repeat: repeat-y;
     opacity: 1;
 }

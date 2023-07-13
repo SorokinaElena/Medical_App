@@ -8,22 +8,22 @@ import TherapyItem from '../TherapyItem';
 
 export default function AddTherapyForm() {
 
-    const { therapy, setTherapy, therapyList, setTherapyList } = useContext(Context);
+    const { therapies, setTherapies, therapyList, setTherapyList } = useContext(Context);
 
     const addTherapy = (data) => {
-        const new_therapy = [...therapy, data];
+        const new_therapies = [...therapies, data];
         // const if_exist_therapy = (data.value) => {
         //     therapy.map
         // }
         // new_therapy.map(el => <TherapyItem />)
-        setTherapy(new_therapy);    
+        setTherapies(new_therapies);    
       }  
       
     const submit = (data) => {
         addTherapy(data);
       }
 
-    const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         mode: 'onBlur',
         defaultValues: {
             therapy: '',
@@ -31,18 +31,11 @@ export default function AddTherapyForm() {
         }
     });
 
-    // useFormPersist("storageKey", {
-    //     watch, 
-    //     setValue,
-    //     storage: window.localStorage, //  default window.sessionStorage
-    // });
-
     const therapyRegister = register('therapy');  
-
     const reactionRegister = register('reaction');  
 
-    console.log(therapy);
-
+    console.log(therapies);
+    
 
   return (
     <form className={s.select_form} onSubmit={handleSubmit(submit)}>

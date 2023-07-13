@@ -41,7 +41,7 @@
 @media (min-width: 320px) and (max-width: 359px) {
 
     .human_block > p { 
-        margin: 25px 0;  
+        margin: 0 0 20px 0;  
     }    
     
 }

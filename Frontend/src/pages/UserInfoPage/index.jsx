@@ -5,18 +5,21 @@ import s from './index.module.css';
 import Button from '../../components/Button';
 import { Link } from 'react-router-dom';
 import AddTherapyForm from '../../components/AddTherapyForm';
+import TherapyItem from '../../components/TherapyItem';
 
 
 export default function UserInfoPage() {
 
   const { collectUserDataForRequest } = useContext(Context);
 
-  const { questionNum, setQuestionNum, answers, pageName, setPageName } = useContext(Context);
+  const { questionNum, answers, pageName, setPageName, therapies } = useContext(Context);
   setPageName('user_info_page');
 
   console.log(pageName);
   console.log(questionNum);
   console.log(answers);
+  // console.log(therapies[1].reaction);
+  
   
   return (
     <div className={s.user_info_page}>
@@ -30,6 +33,14 @@ export default function UserInfoPage() {
       {/* <div className={s.btn_conteiner} >
         <button className={s.btn} onClick={collectUserDataForRequest}>get tips</button>
       </div> */}
+
+      {
+        <div>
+        <TherapyItem therapy='test' reaction='test'/>
+        <TherapyItem therapy='test' reaction='test'/>
+        <TherapyItem therapy='test' reaction='test'/>
+        </div>
+      }
 
       <AddTherapyForm />
 
