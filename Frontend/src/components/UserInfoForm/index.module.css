@@ -10,7 +10,7 @@ form,
 }
 
 .inputs_container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .inputs_container, 
@@ -73,7 +73,7 @@ form,
 @media (max-width: 359px) {
 
   form {
-    gap: 10px;
+    gap: 15px;
   }
 
   .input_box > input {

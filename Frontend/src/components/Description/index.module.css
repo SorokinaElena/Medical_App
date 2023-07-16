@@ -23,7 +23,6 @@
     padding: 10px;
     border-radius: 11px;
     width: 100%;
-    min-height: 155px;
     z-index: 1;
   }
 
@@ -59,6 +58,7 @@
     textarea {
       border: 2px solid #4875f7;
       font-size: 16px;
+      min-height: 150px;
     }
 
     .input_box textarea:focus {
@@ -87,6 +87,7 @@
     textarea {
       border: 2.5px solid #4875f7;
       font-size: 18px;
+      min-height: 170px;
     }
 
     .input_box textarea:focus {
@@ -115,6 +116,7 @@
     textarea {
       border: 2.8px solid #4875f7;
       font-size: 20px;
+      min-height: 250px;
     }
 
     .input_box textarea:focus {
@@ -143,6 +145,7 @@
     textarea {
       border: 2.8px solid #4875f7;
       font-size: 22px;
+      min-height: 250px;
     }
 
     .input_box textarea:focus {
@@ -172,6 +175,7 @@
     textarea {
       border: 2.8px solid #4875f7;
       font-size: 24px;
+      min-height: 200px;
     }
 
     .input_box textarea:focus {

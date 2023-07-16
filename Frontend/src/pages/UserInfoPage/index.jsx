@@ -18,28 +18,27 @@ export default function UserInfoPage() {
   console.log(pageName);
   console.log(questionNum);
   console.log(answers);
+  console.log(therapies);
   // console.log(therapies[1].reaction);
   
   
   return (
     <div className={s.user_info_page}>
       <UserInfoForm />
-      {/* <div className={s.therapy_container}>
-        {
-          therapy_list.map(el => <Therapy key={el.id} {...el} />)
-        }
-      </div> */}
-      {/* <Description /> */}
+
       {/* <div className={s.btn_conteiner} >
         <button className={s.btn} onClick={collectUserDataForRequest}>get tips</button>
       </div> */}
 
       {
-        <div>
-        <TherapyItem therapy='test' reaction='test'/>
-        <TherapyItem therapy='test' reaction='test'/>
-        <TherapyItem therapy='test' reaction='test'/>
-        </div>
+        therapies.length > 0 
+        ? <div>
+            <p>You noted the following therapies:</p>
+            <div className={s.therapies_container}>
+              {therapies.map(el => <TherapyItem key={el.id} {...el}/>)}
+            </div>
+          </div>
+        : ''
       }
 
       <AddTherapyForm />
