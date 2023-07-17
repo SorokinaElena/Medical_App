@@ -3,26 +3,25 @@ import s from './index.module.css';
 import { useForm } from 'react-hook-form';
 import Button from '../Button';
 import { Context } from '../../context';
-import green_smile from '../../media/green_smile.png';
-import lightgreen_smile from '../../media/lightgreen_smile.png';
-import yellow_smile from '../../media/yellow_smile.png';
-import orange_smile from '../../media/orange_smile.png';
-import lightred_smile from '../../media/lightred_smile.png';
-import red_smile from '../../media/red_smile.png';
+
 
 export default function AddTherapyForm() {
 
     const { therapies, setTherapies } = useContext(Context);
 
     const addTherapy = (data) => {
-        const new_therapies = [...therapies, data];
-        // const if_exist_therapy = (data.value) => {
-        //     therapy.map
-        // }
-        // new_therapy.map(el => <TherapyItem />)
-        setTherapies(new_therapies);    
+      let added_therapies = therapies;
+        if (!therapies.find(el => el.therapy === data.therapy)) {
+          added_therapies = [...added_therapies, data];
+          setTherapies(added_therapies);
+        } else {
+          setTherapies(added_therapies)
+          alert('This therapy has already been added')
+        }   
       }  
-      
+
+      console.log(therapies);
+
     const submit = (data) => {
         addTherapy(data);
       }
@@ -37,8 +36,6 @@ export default function AddTherapyForm() {
 
     const therapyRegister = register('therapy');  
     const reactionRegister = register('reaction');  
-
-    // console.log(therapies);
 
 
   return (
@@ -67,3 +64,5 @@ export default function AddTherapyForm() {
     </form>
   )
 }
+
+// https://www.w3schools.com/tags/tag_option.asp

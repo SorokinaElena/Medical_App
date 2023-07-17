@@ -6,7 +6,8 @@ import yellow_smile from '../../media/yellow_smile.png';
 import orange_smile from '../../media/orange_smile.png';
 import lightred_smile from '../../media/lightred_smile.png';
 import red_smile from '../../media/red_smile.png';
-import { RxCross2 } from 'react-icons/rx'
+import { RxCross2 } from 'react-icons/rx';
+import { RxCrossCircled } from 'react-icons/rx';
 
 
 export default function TherapyItem({ id, therapy, reaction }) {
