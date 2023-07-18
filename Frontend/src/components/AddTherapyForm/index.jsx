@@ -18,7 +18,7 @@ export default function AddTherapyForm() {
           setTherapies(added_therapies)
           alert('This therapy has already been added')
         }   
-      }  
+      }
 
       console.log(therapies);
 
@@ -34,29 +34,31 @@ export default function AddTherapyForm() {
         }
     });
 
-    const therapyRegister = register('therapy');  
-    const reactionRegister = register('reaction');  
+    const therapyRegister = register('therapy', {
+      required: true,
+    });  
+    const reactionRegister = register('reaction', {
+      required: true,
+    });  
 
 
   return (
     <form className={s.select_form} onSubmit={handleSubmit(submit)}>
         <div className={s.select_therapy_container}>
             <select {...therapyRegister}>
-                <option value='' id='0'>Add your therapy...</option>
-                <option value="I didn't use any therapy" id='1'>none</option>
-                <option value='Drugs' id='2'>Drugs</option>
-                <option value='Massage' id='3'>Massage</option>
-                <option value='Yoga' id='4'>Yoga</option>
+                <option value=''>Add your therapy...</option>
+                <option value='Pills'>Pills</option>
+                <option value='Massage'>Massage</option>
+                <option value='Yoga'>Yoga</option>
             </select>
             <select {...reactionRegister}>
                 <option value=''>Add your score for therapy...</option>
-                <option value='none'>none</option>
-                <option value='red'>red</option>
-                <option value='light_red'>light red</option>
-                <option value='orange'>orange</option>
-                <option value='yellow'>yellow</option>
-                <option value='light_green'>light green</option>
-                <option value='green'>green</option>
+                <option value='red'>very bad experience</option>
+                <option value='light_red'>bad experience</option>
+                <option value='orange'>rather a bad experience</option>
+                <option value='yellow'>with no positive or negative effect</option>
+                <option value='light_green'>good experience</option>
+                <option value='green'>totally effective</option>
 
             </select>
         </div>  

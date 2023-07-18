@@ -21,7 +21,7 @@ function App() {
   const [ questionNum, setQuestionNum ] = useState(0);
   const [ answers, setAnswers ] = useState([]);
   const [ bmi, setBmi ] = useState([]);
-  const [ therapies, setTherapies ] = useState([]);
+  const [ therapies, setTherapies ] = useState([{therapy: '', reaction: ''}]);
   // const [ description, setDescription ] = useState([]);
   const [ response, setResponse ] = useState([]);
 

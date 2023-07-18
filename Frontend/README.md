@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+screen-orientation articles:
+https://developer.mozilla.org/ru/docs/Web/API/CSS_Object_Model/Managing_screen_orientation
+https://developer.mozilla.org/en-US/docs/Web/API/ScreenOrientation/lock
+https://stackoverflow.com/questions/61339668/screen-orientation-in-reactjs
+https://www.youtube.com/watch?v=GGmbLakR3E4&ab_channel=CodeBoxx
+https://code-boxx.com/lock-screen-orientation/

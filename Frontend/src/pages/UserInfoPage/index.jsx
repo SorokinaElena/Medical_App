@@ -31,7 +31,7 @@ export default function UserInfoPage() {
       </div> */}
 
       {
-        therapies.length > 0 
+        therapies.length > 1 
         ? <div>
             <p>You noted the following therapies:</p>
             <div className={s.therapies_container}>
